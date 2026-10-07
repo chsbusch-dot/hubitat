@@ -5,7 +5,7 @@
   "documentationLink": "https://github.com/bdwilson/hubitat/tree/master/WaterGuru",
   "communityLink": "https://community.hubitat.com/t/release-waterguru-pool-integration/77922",
   "dateReleased": "2026-10-06",
-  "releaseNotes": "Reliability fixes. A failed refresh-token login (throttling, a server error, an expired token) no longer switches the cheaper refresh login off for good: only Cognito saying that flow is not enabled does, until the app is saved again. A WaterGuru error or a response without water bodies is logged and leaves every attribute at its last value, and a field missing from a response no longer clears its attribute. LastMeasurement is sent after the readings it timestamps, so rules triggered by it see the new values. Saving the app no longer drops notifications held during quiet hours. Follows 2.4.1 (cassette fixes).",
+  "releaseNotes": "Reliability fixes. A failed refresh-token login (throttling, a server error, an expired token) no longer switches the cheaper refresh login off for good: only Cognito saying that flow is not enabled, or rejecting the token three polls in a row, does, until the app is saved again. A WaterGuru error or a response without water bodies is logged and leaves every attribute at its last value, a field missing from a response no longer clears its attribute, and a sample without free chlorine or pH no longer advances LastMeasurement. LastMeasurement is sent after the readings it timestamps, so rules triggered by it see the new values. Partial responses no longer cause false recovery notices. Saving the app no longer drops notifications held during quiet hours. Follows 2.4.1 (cassette fixes).",
   "version": "2.4.2",
   "drivers": [
     {
